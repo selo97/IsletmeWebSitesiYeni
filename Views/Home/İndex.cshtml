@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to EvaCare Hub </h1>
+    <p>Welcome back! Please login with your account.</p>
+</div>
+
+<div class="login-form">
+    <form asp-controller="Account" asp-action="Login">
+        <div class="form-group">
+            <label for="Input_Email">Email</label>
+            <input type="email" class="form-control" id="Input_Email" name="Input.Email" placeholder="Enter user email">
+        </div>
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+</div>
+
+<style>
+    .login-form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+</style>

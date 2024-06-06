@@ -1,0 +1,20 @@
+@page
+@model LoginModel
+@using IsletmeWebSitesiYeni.Areas.Identity.Pages.Account
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<partial name="_ValidationScriptsPartial" />
+
+@if (Model.ExternalLogins != null && Model.ExternalLogins.Count > 0)
+{
+    <div>
+        <p>
+            @foreach (var provider in Model.ExternalLogins)
+            {
+                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+            }
+        </p>
+    </div>
+}
